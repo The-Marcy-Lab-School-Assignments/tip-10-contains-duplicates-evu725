@@ -12,7 +12,22 @@
  */
 
 const containsDuplicate = (nums) => {
-  //write your code here
+  // create a frequency object
+  let frequency = {};
+
+  // loop through the array
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
+
+    // if theres a duplicate
+    if (frequency[num]) {
+      return true
+    } else { // duplicate is seen
+      frequency[num] = 1;
+    }
+  }
+  // no duplicates
+  return false;
 };
 
 // Export the function for testing
